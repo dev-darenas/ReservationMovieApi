@@ -1,0 +1,175 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  ? "/api/v1/movies.json?name=fast and fourius&description= about cars&start_date=01/04/2020&end_date=25/04/2020&image_url=http//url.com"
+  : post:
+      summary: Creates a movie
+      tags:
+      - Movies
+      consumes:
+      - application/json
+      parameters:
+      - name: movie
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+            image_url:
+              type: string
+            start_date:
+              type: string
+            end_date:
+              type: string
+          required:
+          - name
+          - start_date
+          - end_date
+      responses:
+        '201':
+          description: movie created
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              description:
+                type: string
+              image_url:
+                type: string
+              start_date:
+                type: date
+              end_date:
+                type: date
+            required:
+            - id
+            - name
+        '422':
+          description: invalid request
+  "/api/v1/movies.json?date=20/03/2020":
+    get:
+      summary: Retrieves movies available in the date send by parameter
+      tags:
+      - Movies
+      produces:
+      - application/json
+      parameters:
+      - name: date
+        in: path
+        type: string
+        required: true
+      responses:
+        '200':
+          description: movies
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              description:
+                type: string
+              image_url:
+                type: string
+              start_date:
+                type: string
+              end_date:
+                type: string
+            required:
+            - id
+            - name
+        '404':
+          description: movies not found
+  ? "/api/v1/reservations.json?reservation_date=26/03/2020&movie_id=4&customer_attributes[email]=darenas+1@softdreams.co&customer_attributes[identification]=11455783&customer_attributes[name]=Camila
+    lozano"
+  : post:
+      summary: Creates a reservation
+      tags:
+      - Reservations
+      consumes:
+      - application/json
+      parameters:
+      - name: reservation
+        in: body
+        schema:
+          type: object
+          properties:
+            movie_id:
+              type: integer
+            reservation_date:
+              type: string
+            customer_attributes:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                identification:
+                  type: string
+          required:
+          - movie_id
+          - reservation_date
+          - customer_attributes
+      responses:
+        '201':
+          description: reservation created
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              movie_id:
+                type: string
+              customer_id:
+                type: string
+              reservation_date:
+                type: string
+            required:
+            - id
+        '422':
+          description: invalid request
+  "/api/v1/reservations.json?start_date=21/03/2020&end_date=26/03/2020":
+    get:
+      summary: Retrieves movies available in the date send by parameter
+      tags:
+      - Reservations
+      produces:
+      - application/json
+      parameters:
+      - name: date
+        in: path
+        type: string
+        required: true
+      responses:
+        '200':
+          description: movies
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              description:
+                type: string
+              image_url:
+                type: string
+              start_date:
+                type: string
+              end_date:
+                type: string
+            required:
+            - id
+            - name
+        '404':
+          description: movies not found
