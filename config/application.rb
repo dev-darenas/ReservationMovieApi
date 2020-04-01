@@ -4,7 +4,7 @@ require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
-require "active_record/railtie"
+# require "active_record/railtie"
 require "active_storage/engine"
 require "action_controller/railtie"
 require "action_mailer/railtie"
@@ -36,5 +36,9 @@ module ReservationsApi
 
     config.autoload_paths <<  Rails.root.join('api')
     config.autoload_paths <<  Rails.root.join('transactions')
+
+    config.sequel.after_connect = proc do
+      Sequel::Model.plugin :timestamps, update_on_create: true
+    end
   end
 end
