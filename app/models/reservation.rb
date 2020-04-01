@@ -3,7 +3,7 @@ class Reservation < ApplicationRecord
   belongs_to :customer
   accepts_nested_attributes_for :customer
 
-  validate :count_reservation
+  validate :count_reservation, :valid_date_reservation
 
   scope :date, -> (date) {
     where(reservation_date: date)
@@ -31,8 +31,14 @@ class Reservation < ApplicationRecord
   private
 
   def count_reservation
-    if movie.reservations.date(self.reservation_date).count > 10
+    if movie && movie.reservations.date(self.reservation_date).count >= 10
       errors.add(:number_reservations, "can't be greater than 10")
+    end
+  end
+
+  def valid_date_reservation
+    if movie.start_date > reservation_date || reservation_date > movie.end_date
+      errors.add(:invalid_reservation_date, "is out of range")
     end
   end
 end
