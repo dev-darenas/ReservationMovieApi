@@ -1,1 +1,1 @@
-require "sequel_rails/railties/legacy_model_config"
+#require "sequel_rails/railties/legacy_model_config"

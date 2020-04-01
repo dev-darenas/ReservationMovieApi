@@ -7,7 +7,7 @@ ruby '2.6.5'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
-gem 'sequel-rails'
+#gem 'sequel-rails'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -34,7 +34,16 @@ gem 'dry-transaction', '0.13.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails', '5.1.1'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'master' # Previously '4-0-dev' or '4-0-maintenance' branch
+  end
+end
+
+group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'database_cleaner'
 end
 
 group :development do
