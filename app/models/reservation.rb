@@ -1,7 +1,9 @@
 class Reservation < ApplicationRecord
+  validates_presence_of :reservation_date
+
   belongs_to :movie
   belongs_to :customer
-  accepts_nested_attributes_for :customer
+  accepts_nested_attributes_for :customer, :movie
 
   validate :count_reservation, :valid_date_reservation
 
@@ -37,7 +39,7 @@ class Reservation < ApplicationRecord
   end
 
   def valid_date_reservation
-    if movie.start_date > reservation_date || reservation_date > movie.end_date
+    if reservation_date && movie && (movie.start_date > reservation_date || reservation_date > movie.end_date)
       errors.add(:invalid_reservation_date, "is out of range")
     end
   end

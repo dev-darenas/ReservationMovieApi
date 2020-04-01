@@ -180,4 +180,10 @@ to update the doc, enter to `spec/integration/movie_spec.rb` and run.
   rake rswag:specs:swaggerize
 ```
 
+## Run Test
 
+In command line run.  
+
+```
+bundle exec rspec
+```

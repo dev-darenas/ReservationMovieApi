@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  validates_presence_of :name, presence: true
+  validates_presence_of :name, :start_date, :end_date
   has_many :reservations
   before_save :default_values
 
