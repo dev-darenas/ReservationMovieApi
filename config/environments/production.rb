@@ -102,10 +102,4 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-
-  begin
-    require 'rspec/core/rake_task'
-    RSpec::Core::RakeTask.new(:spec)
-  rescue LoadError
-  end
 end
