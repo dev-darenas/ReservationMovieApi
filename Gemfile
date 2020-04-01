@@ -31,7 +31,7 @@ gem 'grape', '1.3.1'
 gem 'grape_on_rails_routes', '0.3.2'
 gem 'dry-transaction', '0.13.0'
 
-group :development, :test do
+group :production, :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails', '5.1.1'
