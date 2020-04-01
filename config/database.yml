@@ -24,4 +24,4 @@ production:
   host: db
   database: reservation_api_production
   username: postgres
-  password:
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
