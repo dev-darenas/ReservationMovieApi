@@ -21,12 +21,13 @@ To Know the routes available run console
 
 ## API DOC
 
-If you are run the app localy you can check de API doc (here)[http://localhost:3000/api-docs/index.html]
+If you are run the app localy you can check de API doc (here)[http:localhost/api-docs/index.html]
+to check in production API doc check (here)[https://strawberry-crumble-99221.herokuapp.com/api-docs/index.html]
 
 1. 
 DESCIRPTION: Create a new movie.  
 TYPE: POST.  
-URL: localhost:3000/api/v1/movies.json
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/movies.json
 DATA:
 ```
   {
@@ -58,7 +59,7 @@ RESPONSE:
 2. 
 DESCIRPTION: Get movies available in a determinate day.  
 TYPE: GET.  
-URL: localhost:3000/api/v1/movies.json
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/movies.json
 DATA:
 ```
   {
@@ -96,7 +97,7 @@ RESPONSE:
 3. 
 DESCIRPTION: Create reservation to a movie.  
 TYPE: POST.  
-URL: localhost:3000/api/v1/reservations.json
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/reservations.json
 DATA:
 ```
   {
@@ -128,7 +129,7 @@ RESPONSE:
 3. 
 DESCIRPTION: Get reservations in a range of dates.  
 TYPE: GET.  
-URL: localhost:3000/api/v1/reservations.json
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/reservations.json
 DATA:
 ```
   {
@@ -172,7 +173,7 @@ RESPONSE:
 
 ## Update DOC
 
-You can check the doc olnile just enter to the url http://localhost:3000/api-docs/index.html
+You can check the doc olnile just enter to the url http://https://strawberry-crumble-99221.herokuapp.com/api-docs/index.html
 
 to update the doc, enter to `spec/integration/movie_spec.rb` and run.  
 
