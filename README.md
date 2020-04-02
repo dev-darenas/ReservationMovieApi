@@ -27,8 +27,8 @@ to check in production API doc check [here](https://strawberry-crumble-99221.her
 1. 
 DESCIRPTION: Create a new movie.  
 TYPE: POST.  
-URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/movies.json
-DATA:
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/movies.json  
+PARAMS:  
 ```
   {
     name: 'Fast and Furious',
@@ -59,8 +59,8 @@ RESPONSE:
 2. 
 DESCIRPTION: Get movies available in a determinate day.  
 TYPE: GET.  
-URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/movies.json
-DATA:
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/movies.json  
+PARAMS:  
 ```
   {
     date: 01/04/2020
@@ -98,7 +98,7 @@ RESPONSE:
 DESCIRPTION: Create reservation to a movie.  
 TYPE: POST.  
 URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/reservations.json
-DATA:
+PARAMS:  
 ```
   {
     reservation_date: '26/03/2020',
@@ -130,7 +130,7 @@ RESPONSE:
 DESCIRPTION: Get reservations in a range of dates.  
 TYPE: GET.  
 URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/reservations.json
-DATA:
+PARAMS:  
 ```
   {
     start_date: '26/03/2020',
