@@ -59,8 +59,8 @@ RESPONSE:
 2. 
 DESCIRPTION: Get movies available in a determinate day.  
 TYPE: GET.  
-URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/movies.json  
-PARAMS:  
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/movies.json   
+PARAMS:   
 ```
   {
     date: 01/04/2020
@@ -97,8 +97,8 @@ RESPONSE:
 3. 
 DESCIRPTION: Create reservation to a movie.  
 TYPE: POST.  
-URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/reservations.json
-PARAMS:  
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/reservations.json  
+PARAMS:   
 ```
   {
     reservation_date: '26/03/2020',
@@ -129,16 +129,16 @@ RESPONSE:
 3. 
 DESCIRPTION: Get reservations in a range of dates.  
 TYPE: GET.  
-URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/reservations.json
-PARAMS:  
+URL: https://strawberry-crumble-99221.herokuapp.com/api/v1/reservations.json  
+PARAMS:    
 ```
   {
     start_date: '26/03/2020',
     end_date: '01/04/2020'
   }
 ````
-REQUIRED: ['start_date', 'end_date']  
-RESPONSE:
+REQUIRED: ['start_date', 'end_date']    
+RESPONSE:  
 
 ````
   [
@@ -169,7 +169,7 @@ RESPONSE:
   ]
 ````
 
-**NOTE**: Date format id ´DD/MM/YYYY´
+**NOTE**: Date format i ´DD/MM/YYYY´
 
 ## Update DOC
 
