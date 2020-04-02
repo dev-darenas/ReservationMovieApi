@@ -21,8 +21,8 @@ To Know the routes available run console
 
 ## API DOC
 
-If you are run the app localy you can check de API doc (here)[http:localhost/api-docs/index.html]
-to check in production API doc check (here)[https://strawberry-crumble-99221.herokuapp.com/api-docs/index.html]
+If you are run the app localy you can check de API doc [here](http:localhost/api-docs/index.html)
+to check in production API doc check [here](https://strawberry-crumble-99221.herokuapp.com/api-docs/index.html)
 
 1. 
 DESCIRPTION: Create a new movie.  
